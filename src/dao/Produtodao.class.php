@@ -1,6 +1,4 @@
 <?php
-//require_once('../connectionfactory/Conexaodb.class.php');
-
 require_once(DIR.'src/connectionfactory/Conexaodb.class.php');
 
 class Produtodao
@@ -27,9 +25,6 @@ class Produtodao
     $conexao = $conexao->getConexao();
     date_default_timezone_set('America/Fortaleza');
     $sql = "select * from produtos order by updated_at";
-    //$rs = mysqli_query($conexao, $sql);
-    
-    //$reg = mysqli_fetch_array($rs);
 
     if ($rs = mysqli_query($conexao, $sql))
     {
@@ -44,7 +39,6 @@ class Produtodao
             'url_img' => $reg['url_img'],
             'created_at' => $reg['created_at'],
             'updated_at' => $reg['updated_at']
-            //'cargo' => utf8_encode(utf8_decode($reg['cargo']))
         ];
         $i++;
       }
@@ -99,7 +93,6 @@ class Produtodao
     date_default_timezone_set('America/Fortaleza');
     $hoje = date('Y-m-d');
     $sql = "select p.id, p.nome, p.descricao, p.preco, p.url_img, p.updated_at, promo.preco_promocional FROM produtos AS p LEFT JOIN promocoes AS promo ON p.id = promo.produto_id AND promo.data_inicio <= '". $hoje . "' AND promo.data_fim >= '". $hoje ."' GROUP BY p.id ORDER BY p.updated_at DESC";
-    //$sql = "select * FROM produtos AS p LEFT JOIN promocoes AS promo ON p.id = promo.id AND promo.data_inicio <= '". $hoje ."' AND promo.data_fim >= '". $hoje ."' GROUP BY p.id ORDER BY p.updated_at DESC";
     
     if ($rs = mysqli_query($conexao, $sql))
     {
@@ -144,7 +137,6 @@ class Produtodao
     $reg = mysqli_fetch_array($rs);
     $produto['preco_promocional'] = $reg['preco_promocional'];
     return $produto;
-    $sql = "select p.id, p.nome, p.preco, p.descricao, promo.preco_promocional, promo.data_inicio, promo.data_fim FROM produtos AS p INNER JOIN promocoes AS promo ON p.id = promo.produto_id AND p.id = ". $id;
   }
 
   public function atualizarUpdated($id)

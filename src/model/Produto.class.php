@@ -1,10 +1,4 @@
 <?php 
-
-//namespace secoms_testepratico_bleez\src\model;
-
-//use secoms_testepratico_bleez\src\dao\Produtodao;
-//require_once('../dao/Produtodao.class.php');
-
 require_once(DIR.'src/dao/Produtodao.class.php');
 
 class Produto
@@ -20,7 +14,6 @@ class Produto
 
 	public function __construct()
 	{
-		//var_dump('model produto enfim');
 		$this->dao = new Produtodao();
 	}
 
@@ -66,17 +59,12 @@ class Produto
 
 	public function cadastra(Produto $produto)
 	{
-		//print_r($produto->getNome());
 		return $this->dao->save($produto);
 	}
 
 	public function listar()
 	{
 		return $this->dao->all();
-		//$testedao = new Produtodao();
-		//return $testeprodutos = $testedao->all();
-		//return var_dump($testeprodutos);die;
-		//return self::$dao->all();
 	}
 
 	public function listaComPromocao()
@@ -87,7 +75,6 @@ class Produto
 	public function buscar($id)
 	{
 		return $this->dao->find($id);
-		return 'produto encontrado com require_once';
 	}
 
 	public function anuncio($id)
