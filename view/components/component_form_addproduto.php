@@ -31,7 +31,7 @@
 			<div class="red-text" id="msg-envio"></div>
 	      <h4 class="amber-text">Adicionar Foto</h4>
     		<div class="file-field input-field col m12 l12">
-        	<div class="btn blue darken-4">
+        	<div class="btn blue darken-4" id="btn-imagem">
             <i class="large material-icons amber-text">add_a_photo</i>
             <input id="imagem" type="file" name="imagem" data-token="token" data-user-id="id">
             	<div class="file-path-wrapper">

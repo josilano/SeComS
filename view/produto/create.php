@@ -31,7 +31,7 @@ $navbar_txt_link2 = 'Admin';
     <script src="../../public/js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript">
     	$(document).ready(function(){
-			$('#imagem').prop('disabled', true);
+			$('#btn-imagem').prop('class', 'btn disabled');
 		});
         // Iniciando biblioteca
         var resize = new window.resize();
@@ -153,16 +153,16 @@ $navbar_txt_link2 = 'Admin';
 
 		$(function ($) {
             $('#nome').on('keyup', function () {
-                if (validarDadosProduto()) $('#imagem').prop('disabled', false);
-        		else $('#imagem').prop('disabled', true);
+                if (validarDadosProduto()) $('#btn-imagem').prop('class', 'btn blue darken-4');
+        		else $('#btn-imagem').prop('class', 'btn disabled');
             });
             $('#preco').on('change', function () {
-                if (validarDadosProduto()) $('#imagem').prop('disabled', false);
-        		else $('#imagem').prop('disabled', true);
+                if (validarDadosProduto()) $('#btn-imagem').prop('class', 'btn blue darken-4');
+        		else $('#btn-imagem').prop('class', 'btn disabled');
             });
             $('#descricao').on('keyup', function () {
-                if (validarDadosProduto()) $('#imagem').prop('disabled', false);
-        		else $('#imagem').prop('disabled', true);
+                if (validarDadosProduto()) $('#btn-imagem').prop('class', 'btn blue darken-4');
+        		else $('#btn-imagem').prop('class', 'btn disabled');
             });
             $('#btncad').on('click', function () {
                 if (validarDadosProduto()) cadastraproduto();
