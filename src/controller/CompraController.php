@@ -1,5 +1,6 @@
 <?php
-const DIR = 'caminho\raiz\da\aplicao/';
+$dir_root = $_SERVER['DOCUMENT_ROOT'];
+define('DIR', $dir_root . '/');
 require_once(DIR.'src/email/envioemailphpmailer.php');
 
 class CompraController
